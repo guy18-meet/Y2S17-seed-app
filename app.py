@@ -1,4 +1,4 @@
-# flask imports
+    # flask imports
 from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 import sys
@@ -38,17 +38,19 @@ def add_poll():
 
 
 
-@app.route('/vote')
+@app.route('/vote/<int:poll_id>')
 def vote(poll_id):
-	session.query(Post).filter_by(id=poll_id).first()
-	session.commit()
-	return redirect(url_for('my_feed'))
+    comp = session.query(Comp).filter_by(id=poll_id).first()
+    comp.votes = comp.votes + 1
+    session.commit()
+    return redirect(url_for('my_feed'))
 
 
 @app.route('/')
 def my_feed():
     comps = session.query(Comp).all()
     return render_template('myfeed.html', comps= comps)
+
 
 @app.route('/<string:category>')
 def my_feed_category(category):
