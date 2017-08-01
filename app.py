@@ -19,13 +19,13 @@ session = DBSession()
 @app.route ('/',methods=['GET', 'POST'])
 def add_poll():
     if request.method == 'GET':
-   	 return render_template('addpoll.html')
-   	else:
+    	return render_template('addpoll.html')
+    else:
     	new_poll=Post(id=poll_id,category=request.form.get('category'),title=request.form.get('title'),description=request.form.get('description'),votes=request.form.get('votes'))
-    	new_options=Options(option=request.form.get('option1'),pic_url=request.form.get('pic_url1'),
+    	new_options=Options(option=request.form.get('option1'),pic_url=request.form.get('pic_url1'))
     	session.add(new_poll,new_options)
     	session.commit()
-    	return redirect(url_for('myfeed'))
+    	return redirect(url_for('my_feed'))
 
 
 
@@ -33,21 +33,18 @@ def add_poll():
 def vote(poll_id):
 	session.query(Post).filter_by(id=poll_id).first()
 	session.commit()
-	return redirect(url_for('myfeed'))
+	return redirect(url_for('my_feed'))
 
 
 @app.route('/')
 def my_feed():
-    
     comps = session.query(Comp).all()
- 
-    
-    return render_template('myfeed.html', comps= comps)
+    return render_template('my_feed', comps= comps)
 
 @app.route('/<string:category>')
 def my_feed_category(category):
     comps = session.query(Comp).filter_by(category=category).all()
-    return render_template('myfeed.html', comps=comps)
+    return render_template('my_feed', comps=comps)
 
 
 
