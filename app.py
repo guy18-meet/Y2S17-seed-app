@@ -1,8 +1,10 @@
 # flask imports
 from flask import Flask, render_template, request, redirect, url_for
+app = Flask(__name__)
+import sys
 
 # SQLAlchemy
-from model import Base, Post, Options
+from model import Base, Comp, Options
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -18,9 +20,11 @@ session = DBSession()
 @app.route('/')
 def my_feed():
     
-    # comps = session.query(Comp).all()
-    comps = [{"":""}]
-    return render_template('myfeed.html', comps=comps)
+
+    comps = session.query(Comp).all()
+ 
+    
+    return render_template('myfeed.html', comps= comps)
 
 @app.route('/<string:category>')
 def my_feed_category():
