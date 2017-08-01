@@ -16,6 +16,12 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
+@app.route('/')
+def my_feed():
+    comps = session.query(Comp).all()
+    return render_template('myfeed.html', comps = comps)
+
+
 @app.route ('/add_poll',methods=['GET', 'POST'])
 def add_poll():
     if request.method == 'GET':
@@ -46,10 +52,6 @@ def vote(poll_id):
     return redirect(url_for('my_feed'))
 
 
-@app.route('/')
-def my_feed():
-    comps = session.query(Comp).all()
-    return render_template('myfeed.html', comps= comps)
 
 
 @app.route('/<string:category>')
