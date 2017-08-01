@@ -6,6 +6,7 @@
 
 </head>
 <body>
+
 	<ul>
   		<li><a href="#home">Home</a></li>
   		<li><a href="#news">News</a></li>
@@ -13,31 +14,9 @@
   		<li><a href="#about">About</a></li>
 	</ul>
 
-	 <div id="container">
-      <div id="page-header">
-        <h1>Comp @MEET</h1>
-        <h2>My feed</h2>
-      </div>
-      <div id="main">
-        <a href="{{ url_for('my_feed') }}" class="btn btn-info" role="button">Publish a question</a>
-        {% for comps in comp %}
-          <div class="comp-container">
-            
-            <div class="comp-body">
-              <img class="comp-img" src="{{comp.pic_url}}" alt="picture-{{post.id}}">
-              <div class="comp-description">{{comp.description}}</div>
-            </div>
-            <div class="comp-footer">
-              <div class="comp-user">{{comp.title}}</div>
-              <div class="comp-user">{{comp.votes}}</div>
-              <div class="comp-user">{{comp.option_id}}</div>
-            </div>
-          </div>
-        {% endfor %}
-        <footer id="page-header">
-      <p class="description-muted description-footer-custom">Y2 Flask Intro</p>
-    </footer>
+	<a href="url_for('my_feed')">MOST RECENT</a>
+	<a href="url_for('my_feed')">MOST POPULAR</a>
+>>>>>>> Stashed changes
 
->>>>>>> 04bbd562cb2b7a6eb2f60779b47bec167dcb6adc
 </body>
 </html>
