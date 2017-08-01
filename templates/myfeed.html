@@ -19,5 +19,27 @@
 	<a href="{{url_for('my_feed')}}">MOST RECENT</a>
 	<a href="{{url_for('my_feed')}}">MOST POPULAR</a>
 
+	<div>
+	{%for comp in comps%}
+	<div class="title">
+	<h3 class= "usertitle"> {{comps.title}} </h3>
+	<div>
+	<br>
+	<form>
+	<div class= "options">
+		<input type="radio" name="option" value="{{comps.option1}}" > {{comps.option1}} 
+		<input type="radio" name="option" value="{{comps.option2}}" > {{comps.option2}} 
+		<input type="radio" name="option" value="{{comps.option3}}" > {{comps.option3}} 
+		<input type="radio" name="option" value="{{comps.option4}}" > {{comps.option4}} 
+	</div>
+	<div class = "description">
+		<p> {{"comps.description"}} </p>
+
+	{%endfor%}
+	</div>
+	
+
+
+
 </body>
 </html>
