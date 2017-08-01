@@ -16,20 +16,30 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-@app.route ('/',methods=['GET', 'POST'])
+@app.route ('/add_poll',methods=['GET', 'POST'])
 def add_poll():
     if request.method == 'GET':
     	return render_template('addpoll.html')
+
     else:
-    	new_poll=Post(id=poll_id,category=request.form.get('category'),title=request.form.get('title'),description=request.form.get('description'),votes=request.form.get('votes'))
-    	new_options=Options(option=request.form.get('option1'),pic_url=request.form.get('pic_url1'))
-    	session.add(new_poll,new_options)
-    	session.commit()
-    	return redirect(url_for('my_feed'))
+        new_poll=Post(id=poll_id,category=request.form.get('category'),title=request.form.get('title'),description=request.form.get('description'),votes=request.form.get('votes'))
+        new_option1=Options(option=request.form.get('option1'),pic_url=request.form.get('pic_url1'))
+        new_option2=Options(option=request.form.get('option2'),pic_url=request.form.get('pic_url2'))
+        if request.form.get(pic_url3)!="":
+            new_option3=Options(option=request.form.get('option3'),pic_url=request.form.get('pic_url3'))
+        if request.form.get(pic_url3)!="":
+            new_option4=Options(option=request.form.get('option4'),pic_url=request.form.get('pic_url4'))
+
+        #.add(new_poll,new_options)
+        #session.commit()
+        return redirect(url_for('myfeed.html'))
+        
+        
 
 
 
-@app.route('/')
+
+@app.route('/vote')
 def vote(poll_id):
 	session.query(Post).filter_by(id=poll_id).first()
 	session.commit()
