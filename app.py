@@ -20,7 +20,6 @@ session = DBSession()
 def add_poll():
     if request.method == 'GET':
     	return render_template('addpoll.html')
-
     else:
         new_poll=Post(id=poll_id,category=request.form.get('category'),title=request.form.get('title'),description=request.form.get('description'),votes=request.form.get('votes'))
         new_option1=Options(option=request.form.get('option1'),pic_url=request.form.get('pic_url1'))
