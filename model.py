@@ -22,4 +22,5 @@ class Options(Base):
     post_id=Column(Integer, ForeignKey('post.id'))
     
 # IF YOU NEED TO CREATE OTHER TABLE 
+
 # FOLLOW THE SAME STRUCTURE AS YourModel 	
