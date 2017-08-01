@@ -48,12 +48,12 @@ def vote(poll_id):
 @app.route('/')
 def my_feed():
     comps = session.query(Comp).all()
-    return render_template('my_feed', comps= comps)
+    return render_template('myfeed.html', comps= comps)
 
 @app.route('/<string:category>')
 def my_feed_category(category):
     comps = session.query(Comp).filter_by(category=category).all()
-    return render_template('my_feed', comps=comps)
+    return render_template('myfeed.html', comps=comps)
 
 
 
