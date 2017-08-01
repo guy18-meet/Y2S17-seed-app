@@ -23,3 +23,5 @@ class Options(Base):
     
 # IF YOU NEED TO CREATE OTHER TABLE 
 # FOLLOW THE SAME STRUCTURE AS YourModel
+engine= create_engine('sqlite:///lecture.db')
+Base.metadata.create_all(engine)
