@@ -20,7 +20,7 @@ def my_feed():
     comps= session.query(Comp).all()
     return render_template('my_feed.html',comps=comps)
 
-@app.route('/recent/<int:post_id>',methods=['GET', 'POST'])
+@app.route('/recent ',methods=['GET', 'POST'])
 def my_feed_recent(post_id):
 	comps = session.query(comps).filter_by(id=post_id).first()
     if request.method == 'GET':
@@ -36,6 +36,8 @@ def my_feed_recent(post_id):
       return redirect(url_for('my_feed'))
 
     pass
+
+@app.route ('/addpoll')
 
 @app.route('/pass')
     def random():

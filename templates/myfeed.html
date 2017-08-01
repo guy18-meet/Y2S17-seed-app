@@ -6,11 +6,28 @@
 <body>
 	 <div id="container">
       <div id="page-header">
-        <h1>Tweet @MEET</h1>
+        <h1>Comp @MEET</h1>
         <h2>My feed</h2>
       </div>
       <div id="main">
-        <a href="{{ url_for('add_tweet') }}" class="btn btn-info" role="button">Publish a question</a>
+        <a href="{{ url_for('my_feed') }}" class="btn btn-info" role="button">Publish a question</a>
+        {% for comps in comp %}
+          <div class="comp-container">
+            
+            <div class="comp-body">
+              <img class="comp-img" src="{{comp.pic_url}}" alt="picture-{{post.id}}">
+              <div class="comp-description">{{comp.description}}</div>
+            </div>
+            <div class="comp-footer">
+              <div class="comp-user">{{comp.title}}</div>
+              <div class="comp-user">{{comp.votes}}</div>
+              <div class="comp-user">{{comp.option_id}}</div>
+            </div>
+          </div>
+        {% endfor %}
+        <footer id="page-header">
+      <p class="description-muted description-footer-custom">Y2 Flask Intro</p>
+    </footer>
 
 </body>
 </html>

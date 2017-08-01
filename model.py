@@ -11,6 +11,7 @@ class Post(Base):
     description= Column(String(140))
     votes= Column(Integer, default=0)
     option_id = relationship("Options")
+    
     # ADD YOUR FIELD BELOW ID
 
 class Options(Base):
