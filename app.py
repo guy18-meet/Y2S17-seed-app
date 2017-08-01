@@ -18,7 +18,7 @@ session = DBSession()
 @app.route('/')
 def my_feed():
     comps= session.query(Comp).all()
-    return render_template('my_feed.html',comps=comps)
+    return render_template('myfeed.html',comps=comps)
 
 @app.route('/recent/<int:post_id>',methods=['GET', 'POST'])
 def my_feed_recent(post_id):
