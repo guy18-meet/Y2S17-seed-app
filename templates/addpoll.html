@@ -6,11 +6,15 @@
 	<title>Add poll</title>
 </head>
 <body>
-<h1>Add comparison</h1>
+<div class= "add comp">
+<h1 class= "add title">Add comparison</h1>
+</div>
 <br>
-<h2>In order to add a poll, fill in the following spaces:</h2>
+<h2 class= "add subtitle">In order to add a poll, fill in the following spaces:</h2>
 <br>
+<div class= "add form">
 <form>
+	<div class="text">
 	<input type="text" name="usertitle" placeholder="Enter title">
 	<br><br>
 	<textarea rows="5" cols="30" placeholder="Description here"></textarea>
@@ -26,8 +30,9 @@
 	<br><br>
 	<input type="text" name="option4" placeholder="Forth option here">    
 	<input type="text" name="pic_url4" placeholder="Enter picture url for option 4">
-	<div>
-	<h3>Categories:</h3>
+	</div>
+	<h3 class = "add category">Categories:</h3>
+	<div class = "category">
 	<input type="radio" name="category" value="sports">Sports
 	<br><br>
 	<input type="radio" name="category" value="lifestyle">Lifestyle
@@ -41,8 +46,10 @@
 	<input type="radio" name="category" value="other">Other
 	</div>
 	<br><br>
-	<input type="submit">
-	<a id= cancelbut href="{{url_for('my_feed')}}">      Cancel</a>
+	<input class="submit" type="submit">
+	<a class= cancel id= cancelbut href="{{url_for('my_feed')}}">      Cancel</a>
 </form>
+</div>
+</div>
 </body>
 </html>
