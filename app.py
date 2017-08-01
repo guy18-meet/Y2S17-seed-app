@@ -36,9 +36,6 @@ def vote(poll_id):
 	return redirect(url_for('myfeed'))
 
 
-
-
-
 @app.route('/')
 def my_feed():
     
