@@ -98,7 +98,9 @@ def vote(poll_id):
     session.commit()
     return redirect(url_for('my_feed'))
 
-
+@app.route('/about')
+def aboutus():
+    return render_template('us.html')
 
 
 @app.route('/<string:category>')

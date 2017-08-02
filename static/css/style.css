@@ -67,7 +67,10 @@ ul {
     text-align: center;
 
 }
-.category{
+.categories{
+    position: absolute;
+    display: block;
+    left: 0px
     text-align: left;
     border: solid 2px;
     display:block;
