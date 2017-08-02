@@ -53,7 +53,7 @@ def add_poll():
         session.add(new_poll,new_option2)
         session.add(new_option1)
         session.commit()
-        return redirect(url_for('myfeed.html'))
+        return redirect(url_for('my_feed'))
         
         
 
