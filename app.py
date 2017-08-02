@@ -30,19 +30,28 @@ def add_poll():
     else:
         categ=request.form.get('category')
         titlevar=request.form.get('title')
-        new_poll=Post(category=categ,title=request.form.get('title'),description=request.form.get('description'),votes=request.form.get('votes'))
-        new_option1=Options(option=request.form.get('option1'),pic_url=request.form.get('pic_url1'))
-        new_option2=Options(option=request.form.get('option2'),pic_url=request.form.get('pic_url2'))
+        desc=request.form.get('description')
+
+        new_poll=Post(category=categ,title=titlevar,description=desc)
+        opt1=request.form.get('option1')
+        url1=request.form.get('pic_url1')
+        opt2=request.form.get('option2')
+        url2=request.form.get('pic_url2')
+        new_option1=Options(option=opt1,pic_url=url1)
+        new_option2=Options(option=opt2,pic_url=url2)
         url3=request.form.get('pic_url3')
+        opt3=request.form.get('option3')
         url4= request.form.get('pic_url4')
+        opt4=request.form.get('option4')
         if url3!=None:
-            new_option3=Options(option=request.form.get('option3'),pic_url=request.form.get('pic_url3'))
+            new_option3=Options(option=opt3,pic_url=url3)
             session.add(new_option3)
         elif url4!=None:
-            new_option4=Options(option=request.form.get('option4'),pic_url=request.form.get('pic_url4'))
+            new_option4=Options(option=opt4,pic_url=url4)
             session.add(new_option4)
 
-        session.add(new_poll,new_option1,new_option2)
+        session.add(new_poll,new_option2)
+        session.add(new_option1)
         session.commit()
         return redirect(url_for('myfeed.html'))
         
