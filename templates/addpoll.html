@@ -6,14 +6,14 @@
 	<title>Add poll</title>
 </head>
 <body>
-<div class= "add comp">
+<div class= "add post">
 <h1 class= "add title">Add comparison</h1>
 </div>
 <br>
 <h2 class= "add subtitle">In order to add a poll, fill in the following spaces:</h2>
 <br>
 <div class= "add form">
-<form>
+<form action="{{ url_for('add_poll') }}" method="post" >
 	<div class="text">
 	<input type="text" name="usertitle" placeholder="Enter title">
 	<br><br>
@@ -47,7 +47,7 @@
 	</div>
 	<br><br>
 	<input class="submit" type="submit">
-	<a class= cancel id= cancelbut href="{{url_for('my_feed')}}">      Cancel</a>
+	<a class= cancel id= cancelbut href="{{url_for('my_feed')}}">Cancel</a>
 </form>
 </div>
 </div>

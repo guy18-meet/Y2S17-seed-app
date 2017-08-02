@@ -4,7 +4,7 @@ app = Flask(__name__)
 import sys
 
 # SQLAlchemy
-from model import Base, Comp, Options
+from model import Base, Post, Options
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -18,8 +18,9 @@ session = DBSession()
 
 @app.route('/')
 def my_feed():
-    comps = session.query(Comp).all()
-    return render_template('myfeed.html', comps = comps)
+    posts=session.query(Post).all()
+    return render_template('myfeed.html', posts = posts)
+
 
 
 @app.route ('/add_poll',methods=['GET', 'POST'])
@@ -27,27 +28,62 @@ def add_poll():
     if request.method == 'GET':
     	return render_template('addpoll.html')
     else:
-        new_poll=Post(id=poll_id,category=request.form.get('category'),title=request.form.get('title'),description=request.form.get('description'),votes=request.form.get('votes'))
+        categ=request.form.get('category')
+        titlevar=request.form.get('title')
+        new_poll=Post(category=categ,title=request.form.get('title'),description=request.form.get('description'),votes=request.form.get('votes'))
         new_option1=Options(option=request.form.get('option1'),pic_url=request.form.get('pic_url1'))
         new_option2=Options(option=request.form.get('option2'),pic_url=request.form.get('pic_url2'))
-        if request.form.get(pic_url3)!="":
+        url3=request.form.get('pic_url3')
+        url4= request.form.get('pic_url4')
+        if url3!=None:
             new_option3=Options(option=request.form.get('option3'),pic_url=request.form.get('pic_url3'))
-        if request.form.get(pic_url3)!="":
+            session.add(new_option3)
+        elif url4!=None:
             new_option4=Options(option=request.form.get('option4'),pic_url=request.form.get('pic_url4'))
+            session.add(new_option4)
 
-        #.add(new_poll,new_options)
-        #session.commit()
+        session.add(new_poll,new_option1,new_option2)
+        session.commit()
         return redirect(url_for('myfeed.html'))
         
         
 
+#categories routing:
+@app.route('/sports')
+def cat1():
+    
+    catpost1=session.query(Post).filter_by(category="sports").all()
+    return render_template('myfeed.html', posts = catpost1)
 
+@app.route('/lifestyle')
+def cat2():
+    catpost2=session.query(Post).filter_by(category="lifestyle").all()
+    return render_template('myfeed.html', posts = catpost2)
 
+@app.route('/fashion')
+def cat3():
+    catpost3=session.query(Post).filter_by(category="fashion").all()
+    return render_template('myfeed.html', posts = catpost3)
+
+@app.route('/cars')
+def cat4():
+    catpost4=session.query(Post).filter_by(category="cars").all()
+    return render_template('myfeed.html', posts = catpost4)
+
+@app.route('/advices')
+def cat5():
+    catpost5=session.query(Post).filter_by(category="advices").all()
+    return render_template('myfeed.html', posts = catpost5)
+
+@app.route('/other')
+def cat6():
+    catpost6=session.query(Post).filter_by(category="other").all()
+    return render_template('myfeed.html', posts = catpost6)
 
 @app.route('/vote/<int:poll_id>')
 def vote(poll_id):
-    comp = session.query(Comp).filter_by(id=poll_id).first()
-    comp.votes = comp.votes + 1
+    post = session.query(Post).filter_by(id=poll_id).first()
+    post.votes = post.votes + 1
     session.commit()
     return redirect(url_for('my_feed'))
 
@@ -56,8 +92,8 @@ def vote(poll_id):
 
 @app.route('/<string:category>')
 def my_feed_category(category):
-    comps = session.query(Comp).filter_by(category=category).all()
-    return render_template('myfeed.html', comps=comps)
+    posts = session.query(Post).filter_by(category=category).all()
+    return render_template('myfeed.html', posts=posts)
 
 
 

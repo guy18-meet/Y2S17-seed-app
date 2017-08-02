@@ -25,23 +25,37 @@
   """"". Change font of WebComp 2. Align them side-by-side 3. ask Guy for his work on the divs. 4. find out how to add a profile section at the right hand side of the taskbar"""""
 
 	<div>
-	{%for comp in comps%}
+	{%for post in posts%}
 	<div class="title">
-	<h3 class= "usertitle"> {{comps.title}} </h3>
+	<h3 class= "usertitle"> {{posts.title}} </h3>
 	<div>
 	<br>
 	<form>
 	<div class= "options">
-		<input type="radio" name="vote" value="{{comps.option1}}" > {{comps.option1}} 
-		<input type="radio" name="vote" value="{{comps.option2}}" > {{comps.option2}} 
-		<input type="radio" name="vote" value="{{comps.option3}}" > {{comps.option3}} 
-		<input type="radio" name="vote" value="{{comps.option4}}" > {{comps.option4}} 
+		<input type="radio" name="vote" value="{{posts.option1}}" > {{posts.option1}} 
+		<input type="radio" name="vote" value="{{posts.option2}}" > {{posts.option2}} 
+		<input type="radio" name="vote" value="{{posts.option3}}" > {{posts.option3}} 
+		<input type="radio" name="vote" value="{{posts.option4}}" > {{posts.option4}} 
 	</div>
 	<div class = "description">
-		<p> {{"comps.description"}} </p>
+		<p> {{"posts.description"}} </p>
 
 	{%endfor%}
 	</div>
+	<div style=" align-self: right ; border: 9px; border-style:dotted; background-color: black; color: white;width: 70px;" class="categories" >
+
+		<a style="color: white;" href="{{url_for('cat1')}}">Sports</a>
+		<br><br>
+		<a style="color: white;" href="{{url_for('cat2')}}">Lifestyle</a>
+		<br><br>
+		<a style="color: white;" href="{{url_for('cat3')}}">Fashion</a>
+		<br><br>
+		<a style="color: white;" href="{{url_for('cat4')}}">Cars</a>
+		<br><br>
+		<a style="color: white;"  href="{{url_for('cat5')}}">Advice</a>
+		<br><br>
+		<a style="color: white;" href="{{url_for('cat6')}}">Other</a>
+		<br><br>
 	
 </body>
 </html>

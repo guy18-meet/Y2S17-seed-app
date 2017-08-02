@@ -4,8 +4,8 @@ from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
-class Comp(Base):
-    __tablename__  = 'comp'
+class Post(Base):
+    __tablename__  = 'post'
     id = Column(Integer, primary_key=True)
     category= Column(String)
     title= Column(String(100))
@@ -21,7 +21,7 @@ class Options(Base):
     option= Column(String(30))
     pic_url=Column(String)
     opvote=Column(Integer)
-    post_id=Column(Integer, ForeignKey('comp.id'))
+    post_id=Column(Integer, ForeignKey('post.id'))
     
 # IF YOU NEED TO CREATE OTHER TABLE 
 
