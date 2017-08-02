@@ -6,12 +6,12 @@
 
 </head>
 <body>
-  <div class="topnav" id="myTopnav">
+  <div class="topnav">
 
   	<ul>
 
-      <div class="Webpoll" id="WebPoll">
-        <a href="Webpoll">WebPoll</a>
+      <div class="addpoll">
+        <a href="{{url_for('add_poll')}}">Add Poll</a>
       </div>  
       <div class= "categories-nav" id="categories-nav">
         <div class="button-inverse">
@@ -41,26 +41,14 @@
   <a href="{{url_for('add_poll')}}">Add Poll</a>
   """"". Change font of WebComp 2. Align them side-by-side 3. ask Guy for his work on the divs. 4. find out how to add a profile section at the right hand side of the taskbar"""""
 
-	{%for post in posts%}
-	{%for opt in options%}
-	
-	<div class="title">
-	<h3 class= "usertitle"> {{post.title}} </h3>
-	<br>
-	</div>
-	</form>
-	<div class = "description">
-		<p> {{post.description}} </p>
-	</div>
-	<form action="">
-	<div class= "options" style="color: black">
-		<input type="radio" name="vote" value="{{post.opt}}" > {{post.opt}} 
-		<img src="{{opt.pic_url}}">
-		<input type="submit"> 
-	</div>
-	
-	{%endfor%}
-	{%endfor%}
+	{% for post in posts %}
+		My post: {{post.title}}
+		{% for opt in post.options %}
+			My option: {{opt.option}}	
+		{% endfor %}
+	{% endfor %}
+
+
 
 	<div style=" align-self: right ; border: 9px; border-style:dotted; background-color: black; color: white;width: 70px;" class="categories" >
 

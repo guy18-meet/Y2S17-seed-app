@@ -18,9 +18,23 @@ session = DBSession()
 
 @app.route('/')
 def my_feed():
-    posts=session.query(Post).all()
-    options = session.query(Option).all()
-    return render_template('myfeed.html', posts = posts, options = options)
+    # posts=session.query(Post).all()
+    posts = [
+        {
+        "title": "My first post","category": "wepo", "description": "car wepowe wer", "votes": 3,
+        "options": [
+            {"option": "option one", "pic_url": "photo.jpg", "opvote":4},
+            {"option": "option two", "pic_url": "photo.jpg", "opvote":4}
+        ]
+        }, {
+        "title": "My second post","category": "wepo", "description": "car wepowe wer", "votes": 3,
+        "options": [
+            {"option": "option one", "pic_url": "photo.jpg", "opvote":4},
+            {"option": "option two", "pic_url": "photo.jpg", "opvote":4}
+        ]
+        }
+    ]
+    return render_template('myfeed.html', posts = posts)
 
 
 @app.route ('/add_poll',methods=['GET', 'POST'])
