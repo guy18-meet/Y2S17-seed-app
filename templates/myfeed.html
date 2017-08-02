@@ -40,14 +40,26 @@
   <br><br>
   <a href="{{url_for('add_poll')}}">Add Poll</a>
   """"". Change font of WebComp 2. Align them side-by-side 3. ask Guy for his work on the divs. 4. find out how to add a profile section at the right hand side of the taskbar"""""
-
+  <br>
 	{% for post in posts %}
-		My post: {{post.title}}
+		{{post.title}}
+		<br>
+		Description: 
+		<br>
+		{{post.description}}
+		<br>
 		{% for opt in post.options %}
-			My option: {{opt.option}}	
+			<form action="{{ url_for('vote'(post.id)) }}" method="post" >
+			<input type="radio" , name= "vote" , value="{{opt.option}}" > {{opt.option}} {{opt.opvotes}} 
+			<img src="{{opt.pic_url}}">
+			<br>
+			
 		{% endfor %}
-	{% endfor %}
+		<input type="submit">
+		<br>
 
+	{% endfor %}
+	</form><
 
 	<div style=" align-self: right ; border: 9px; border-style:dotted; background-color: black; color: white;width: 70px;" class="categories" >
 
