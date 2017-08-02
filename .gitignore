@@ -10,3 +10,6 @@ ngrok*
 
 #add_sample.py
 add_sample.py
+
+#db
+*.db
