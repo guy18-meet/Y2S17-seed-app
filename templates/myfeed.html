@@ -42,24 +42,24 @@
   """"". Change font of WebComp 2. Align them side-by-side 3. ask Guy for his work on the divs. 4. find out how to add a profile section at the right hand side of the taskbar"""""
 
 	{%for post in posts%}
-	{%for opt in options%}
 	
 	<div class="title">
 	<h3 class= "usertitle"> {{post.title}} </h3>
 	<br>
 	</div>
+	<form action="">
+	<div class= "options" style="color: black">
+		<input type="radio" name="vote" value="{{posts.options[0]}}" > {{posts.options[0]}} {{posts.options[0].opvote}}
+		<input type="radio" name="vote" value="{{posts.options[1]}}" > {{posts.options[1]}} {{posts.options[1].opvote}}
+		<input type="radio" name="vote" value="{{posts.options[2]}}" > {{posts.options[2]}} {{posts.options[2].opvote}}
+		<input type="radio" name="vote" value="{{posts.options[3]}}" > {{posts.options[3]}} {{posts.options[3].opvote}}
+		<input type="submit" name="submit" >
+	</div>
 	</form>
 	<div class = "description">
 		<p> {{post.description}} </p>
 	</div>
-	<form action="">
-	<div class= "options" style="color: black">
-		<input type="radio" name="vote" value="{{post.opt}}" > {{post.opt}} 
-		<img src="{{opt.pic_url}}">
-		<input type="submit"> 
-	</div>
 	
-	{%endfor%}
 	{%endfor%}
 
 	<div style=" align-self: right ; border: 9px; border-style:dotted; background-color: black; color: white;width: 70px;" class="categories" >
