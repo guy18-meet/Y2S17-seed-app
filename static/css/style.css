@@ -19,6 +19,8 @@
     background-color: #ddd;
     color: black;
 
+
+
 }
 
 /* Add a color to the active/current link */
@@ -63,5 +65,45 @@ ul {
 }
 .button-inverse{
     text-align: center;
-    
+
 }
+.category{
+    text-align: left;
+    border: solid 2px;
+    display:block;
+    padding: -20px -20px;
+    margin: 0px;
+    background-color: /;
+    text-align: center;
+    font-size: 25px;
+     background-color:#2B2B2B;
+}
+
+.add_category{
+    text-align: center;
+    font-size :30px;
+     background-color:#2B2B2B;
+
+}
+.add_title{
+    text-align: center;
+    background-color:#2B2B2B;
+}
+.add_form{
+    text-align: center
+    background-color: #F6F6F6;
+
+}
+#textt{
+    font-size: 20px;
+    background-color: #E9E581;
+    
+ }
+ #aha{
+    text-align: center;
+    margin: 0px;
+    background-color: #F6F6F6;
+ }
+ .text{
+    background-color:#E9E581;
+ }
