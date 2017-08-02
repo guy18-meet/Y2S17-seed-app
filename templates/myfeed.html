@@ -2,13 +2,15 @@
 <html>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 <head>
-	<title>Page Name</title>
+	<title>WebComp</title>
 
 </head>
 <body>
   <div class="topnav" id="myTopnav">
 
   	<ul>
+      <button class="hamburger-button hamburger-button-inverse" aria-label="Navigation Menu" data-hamburger-button> 
+        <li><a href="WebComp" font="verdana">WebComp</a></li>
     		<li><a href="{{url_for('my_feed')}}">Home</a></li>
     		<li><a href="#contact">Contact</a></li>
     		<li><a href="#about">About</a></li>
@@ -20,7 +22,7 @@
 	<a href="{{url_for('my_feed')}}">MOST POPULAR</a>
   <br><br>
   <a href="{{url_for('add_poll')}}">Add Poll</a>
-
+  """"". Change font of WebComp 2. Align them side-by-side 3. ask Guy for his work on the divs. 4. find out how to add a profile section at the right hand side of the taskbar"""""
 
 	<div>
 	{%for comp in comps%}
