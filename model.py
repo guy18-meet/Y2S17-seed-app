@@ -11,12 +11,12 @@ class Post(Base):
     title= Column(String(100))
     description= Column(String(140))
     votes= Column(Integer, default=0)
-    option_id = relationship("Options")
+    option_id = relationship("Option")
     
     # ADD YOUR FIELD BELOW ID
 
-class Options(Base):
-    __tablename__  = 'options'
+class Option(Base):
+    __tablename__  = 'option'
     id = Column(Integer, primary_key=True)
     option= Column(String(30))
     pic_url=Column(String)

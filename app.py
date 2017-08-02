@@ -4,7 +4,7 @@ app = Flask(__name__)
 import sys
 
 # SQLAlchemy
-from model import Base, Post, Options
+from model import Base, Post, Option
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -19,8 +19,8 @@ session = DBSession()
 @app.route('/')
 def my_feed():
     posts=session.query(Post).all()
-    return render_template('myfeed.html', posts = posts)
-
+    options = session.query(Option).all()
+    return render_template('myfeed.html', posts = posts, options = options)
 
 
 @app.route ('/add_poll',methods=['GET', 'POST'])
@@ -37,17 +37,17 @@ def add_poll():
         url1=request.form.get('pic_url1')
         opt2=request.form.get('option2')
         url2=request.form.get('pic_url2')
-        new_option1=Options(option=opt1,pic_url=url1)
-        new_option2=Options(option=opt2,pic_url=url2)
+        new_option1=Option(option=opt1,pic_url=url1)
+        new_option2=Option(option=opt2,pic_url=url2)
         url3=request.form.get('pic_url3')
         opt3=request.form.get('option3')
         url4= request.form.get('pic_url4')
         opt4=request.form.get('option4')
         if url3!=None:
-            new_option3=Options(option=opt3,pic_url=url3)
+            new_option3=Option(option=opt3,pic_url=url3)
             session.add(new_option3)
         elif url4!=None:
-            new_option4=Options(option=opt4,pic_url=url4)
+            new_option4=Option(option=opt4,pic_url=url4)
             session.add(new_option4)
 
         session.add(new_poll,new_option2)
@@ -106,4 +106,4 @@ def my_feed_category(category):
     return render_template('myfeed.html', posts=posts)
 
 
-
+Base.metadata.create_all()

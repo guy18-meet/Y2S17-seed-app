@@ -24,25 +24,28 @@
   <a href="{{url_for('add_poll')}}">Add Poll</a>
   """"". Change font of WebComp 2. Align them side-by-side 3. ask Guy for his work on the divs. 4. find out how to add a profile section at the right hand side of the taskbar"""""
 
-	<div>
 	{%for post in posts%}
+	{%for option in options%}
+	{%if option.id==post.id%}
 	<div class="title">
-	<h3 class= "usertitle"> {{posts.title}} </h3>
-	<div>
+	<h3 class= "usertitle"> {{post.title}} </h3>
 	<br>
-	<form>
-	<div class= "options">
-		<input type="radio" name="vote" value="{{posts.option1}}" > {{posts.option1}} {{posts.option_id.opvote[0]}}
-		<input type="radio" name="vote" value="{{posts.option2}}" > {{posts.option2}} {{posts.option_id.opvote[1]}}
-		<input type="radio" name="vote" value="{{posts.option3}}" > {{posts.option3}} {{posts.option_id.opvote[2]}}
-		<input type="radio" name="vote" value="{{posts.option4}}" > {{posts.option4}} {{posts.option_id.opvote[3]}}
 	</div>
 	</form>
 	<div class = "description">
-		<p> {{"posts.description"}} </p>
-
-	{%endfor%}
+		<p> {{post.description}} </p>
 	</div>
+	<form action="">
+	<div class= "options" style="color: black">
+		<input type="radio" name="vote" value="{{option.option}}" > {{option.option}} 
+		<img src="{{option.pic_url}}">
+		<input type="submit"> 
+	</div>
+	
+	{%endif%}
+	{%endfor%}
+	{%endfor%}
+
 	<div style=" align-self: right ; border: 9px; border-style:dotted; background-color: black; color: white;width: 70px;" class="categories" >
 
 		<a style="color: white;" href="{{url_for('cat1')}}">Sports</a>
@@ -57,6 +60,6 @@
 		<br><br>
 		<a style="color: white;" href="{{url_for('cat6')}}">Other</a>
 		<br><br>
-	
+	</div>
 </body>
 </html>
