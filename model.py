@@ -13,7 +13,7 @@ class Post(Base):
     votes= Column(Integer, default=0)
     option_id = relationship("Option")
     
-    # ADD YOUR FIELD BELOW ID
+    # ADD YOUR FIELD BELOW I
 
 class Option(Base):
     __tablename__  = 'option'

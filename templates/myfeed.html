@@ -9,12 +9,20 @@
   <div class="topnav" id="myTopnav">
 
   	<ul>
-      <button class="hamburger-button hamburger-button-inverse" aria-label="Navigation Menu" data-hamburger-button> 
-        <li><a href="WebComp" font="verdana">WebComp</a></li>
-    		<li><a href="{{url_for('my_feed')}}">Home</a></li>
-    		<li><a href="#contact">Contact</a></li>
-    		<li><a href="#about">About</a></li>
-        
+      <div class="Webpoll" id="WebPoll">
+        <a href="Webpoll">WebPoll</a>
+      </div>  
+      <div class= "categories-nav" id="categories-nav">
+        <div class="button-inverse">
+    		  <a href="{{url_for('my_feed')}}">Home</a>
+        </div>
+        <div class="button-inverse">
+    		  <a href="#contact">Contact</a>
+        </div> 
+        <div class="button-inverse"> 
+    		  <a href="#about">About</a>
+        </div>
+      </div>
   	</ul>
   </div>
   <br><br>
