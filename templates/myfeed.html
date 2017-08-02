@@ -32,11 +32,12 @@
 	<br>
 	<form>
 	<div class= "options">
-		<input type="radio" name="vote" value="{{posts.option1}}" > {{posts.option1}} 
-		<input type="radio" name="vote" value="{{posts.option2}}" > {{posts.option2}} 
-		<input type="radio" name="vote" value="{{posts.option3}}" > {{posts.option3}} 
-		<input type="radio" name="vote" value="{{posts.option4}}" > {{posts.option4}} 
+		<input type="radio" name="vote" value="{{posts.option1}}" > {{posts.option1}} {{posts.option_id.opvote[0]}}
+		<input type="radio" name="vote" value="{{posts.option2}}" > {{posts.option2}} {{posts.option_id.opvote[1]}}
+		<input type="radio" name="vote" value="{{posts.option3}}" > {{posts.option3}} {{posts.option_id.opvote[2]}}
+		<input type="radio" name="vote" value="{{posts.option4}}" > {{posts.option4}} {{posts.option_id.opvote[3]}}
 	</div>
+	</form>
 	<div class = "description">
 		<p> {{"posts.description"}} </p>
 

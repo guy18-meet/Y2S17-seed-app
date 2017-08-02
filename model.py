@@ -20,7 +20,7 @@ class Options(Base):
     id = Column(Integer, primary_key=True)
     option= Column(String(30))
     pic_url=Column(String)
-    opvote=Column(Integer)
+    opvote=Column(Integer, default=0)
     post_id=Column(Integer, ForeignKey('post.id'))
     
 # IF YOU NEED TO CREATE OTHER TABLE 

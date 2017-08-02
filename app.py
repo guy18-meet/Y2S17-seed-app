@@ -89,10 +89,11 @@ def cat6():
     catpost6=session.query(Post).filter_by(category="other").all()
     return render_template('myfeed.html', posts = catpost6)
 
-@app.route('/vote/<int:poll_id>')
+@app.route('/vote/<int:poll_id>',methods=['GET', 'POST'])
 def vote(poll_id):
     post = session.query(Post).filter_by(id=poll_id).first()
     post.votes = post.votes + 1
+    post.option_id.opvotes = post.option_id.opvotes +1
     session.commit()
     return redirect(url_for('my_feed'))
 
