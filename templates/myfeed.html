@@ -43,13 +43,17 @@
   <br>
 	{% for post in posts %}
 		{{post.title}}
-		<br>
+		<br><br>
 		Description: 
 		<br>
 		{{post.description}}
+		<br><br>
+		Category:
 		<br>
+		{{post.category}}
+		<br><br>
 		{% for opt in post.options %}
-			<form action="{{ url_for('vote'(post.id)) }}" method="post" >
+			<form action="{{ url_for('vote', poll_id = post.id) }}" method="post" >
 			<input type="radio" , name= "vote" , value="{{opt.option}}" > {{opt.option}} {{opt.opvotes}} 
 			<img src="{{opt.pic_url}}">
 			<br>
@@ -57,9 +61,12 @@
 		{% endfor %}
 		<input type="submit">
 		<br>
+		<br>
+		<br>
+		<br>
 
 	{% endfor %}
-	</form><
+	</form>
 
 	<div style=" align-self: right ; border: 9px; border-style:dotted; background-color: black; color: white;width: 70px;" class="categories" >
 

@@ -18,35 +18,20 @@ session = DBSession()
 
 @app.route('/')
 def my_feed():
-    # posts=session.query(Post).all()
-    posts = [
-        {
-        "title": "My first post","category": "wepo", "description": "car wepowe wer", "votes": 3,
-        "options": [
-            {"option": "option one", "pic_url": "photo.jpg", "opvote":4},
-            {"option": "option two", "pic_url": "photo.jpg", "opvote":4}
-        ]
-        }, {
-        "title": "My second post","category": "wepo", "description": "car wepowe wer", "votes": 3,
-        "options": [
-            {"option": "option one", "pic_url": "photo.jpg", "opvote":4},
-            {"option": "option two", "pic_url": "photo.jpg", "opvote":4}
-        ]
-        }
-    ]
+    posts=session.query(Post).all()
     return render_template('myfeed.html', posts = posts)
-
+    
 
 @app.route ('/add_poll',methods=['GET', 'POST'])
 def add_poll():
     if request.method == 'GET':
     	return render_template('addpoll.html')
     else:
-        categ=request.form.get('category')
-        titlevar=request.form.get('title')
-        desc=request.form.get('description')
+        new_category   = request.form.get('category')
+        new_title       = request.form.get('usertitle')
+        new_description           = request.form.get('user_description')
 
-        new_poll=Post(category=categ,title=titlevar,description=desc)
+        new_poll=Post(category=new_category,title=new_title,description=new_description)
         opt1=request.form.get('option1')
         url1=request.form.get('pic_url1')
         opt2=request.form.get('option2')
