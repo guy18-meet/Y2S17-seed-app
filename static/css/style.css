@@ -1,6 +1,11 @@
-#allpage{
-    background-image: url("https://quotefancy.com/media/wallpaper/3840x2160/68070-Kurt-Vonnegut-Quote-What-is-flirtatiousness-but-an-argument-that.jpg");
+
+body{
+    background-image: url(http://gdj.graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-9.jpg);
+}
+
+
  }
+
 .topnav {
     background-color: #76323F;
     overflow: hidden;
@@ -36,7 +41,6 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #76323F;
     /*position:;*/
     text-align:left;
     top: 0;
@@ -83,23 +87,23 @@ ul {
     background-color: /;
     text-align: center;
     font-size: 25px;
-    background-color:  #C09f80;  
+    background-color:  ;  
 }
 
 .add_category{
     text-align: center;
     font-size :30px;
-    background-color:  #C09f80;
+    background-color:  ;
      
 }
 .add_title{
     text-align: center;
-    background-color:  #C09f80;
+    background-color:  ;
     
 }
 .add_form{
     text-align: center;
-    background-color:  #C09f80;
+    background-color:  ;
 
      
 
@@ -113,10 +117,10 @@ ul {
  #aha{
     text-align: center;
     margin: 0px;
-    background-color:  #C09f80;
+    background-color:  ;
  }
  .text{
-    background-color: #C09f80;
+    background-color: 0;
     text-align: center;
  }
  
