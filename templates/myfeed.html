@@ -43,8 +43,13 @@
 		<br><br>
 		{% for opt in post.options %}
 			<form action="{{ url_for('vote', poll_id = post.id) }}" method="post" >
+<<<<<<< Updated upstream
 			<input type="radio" , name= "vote" , value="{{opt.id}}"> {{opt.option}}, {{opt.opvote}}
 			<img style="width: 50px height:50px" src="{{opt.pic_url}}">
+=======
+			<input type="radio" , name= "vote" , value="{{opt.id}}"> {{opt.option}}, {{opt.opvote}} votes
+			<img src="{{opt.pic_url}}">
+>>>>>>> Stashed changes
 			<br>
 			
 		{% endfor %}
