@@ -5,7 +5,7 @@ import sys
 
 # SQLAlchemy
 from model import Base, Post, Option
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, desc
 from sqlalchemy.orm import sessionmaker
 
 
@@ -18,7 +18,7 @@ session = DBSession()
 
 @app.route('/')
 def my_feed():
-    posts=session.query(Post).all()
+    posts=session.query(Post).order_by("id desc").all()
     return render_template('myfeed.html', posts = posts)
     
 
@@ -52,7 +52,7 @@ def add_poll():
         new_description = request.form.get('user_description')
 
 
-        new_poll=Post(category=new_category,title=new_title,
+        new_poll=Post(catpost1tegory=new_category,title=new_title,
             description=new_description, 
             options = new_options)
         
@@ -101,8 +101,13 @@ def cat6():
 
 def vote(poll_id):
     post = session.query(Post).filter_by(id=poll_id).first()
-    post.votes = post.votes + 1
-    post.option_id.opvotes = post.option_id.opvotes +1
+    post.votes += 1
+    
+    # Capture which one is being voted on
+    voted_on = request.form.get('vote')
+    voted_on_option = session.query(Option).filter_by(id=voted_on).first()
+    voted_on_option.opvote += 1
+
     session.commit()
     return redirect(url_for('my_feed'))
 
