@@ -47,7 +47,7 @@
 			<br>
 			
 		{% endfor %}
-		<input type="submit">
+		<input id="divss" type="submit">
 		<br>
 		<br>
 		<br>
@@ -56,20 +56,26 @@
 	{% endfor %}
 	</form>
 
-	<div style=" align-self: right ; border: 9px; border-style:dotted; background-color: black; color: white;width: 70px;" class="categories" >
-
-		<a style="color: white;" href="{{url_for('cat1')}}">Sports</a>
+	
+  <div class="categories">
+		<a  style="color: white;" href="{{url_for('cat1')}}">Sports</a>
 		<br><br>
-		<a style="color: white;" href="{{url_for('cat2')}}">Lifestyle</a>
+		<a  style="color: white;" href="{{url_for('cat2')}}">Lifestyle</a>
 		<br><br>
-		<a style="color: white;" href="{{url_for('cat3')}}">Fashion</a>
+		<a  style="color: white;" href="{{url_for('cat3')}}">Fashion</a>
 		<br><br>
-		<a style="color: white;" href="{{url_for('cat4')}}">Cars</a>
+		<a " style="color: white;" href="{{url_for('cat4')}}">Cars</a>
 		<br><br>
-		<a style="color: white;"  href="{{url_for('cat5')}}">Advice</a>
+		<a  style="color: white;"  href="{{url_for('cat5')}}">Advice</a>
 		<br><br>
-		<a style="color: white;" href="{{url_for('cat6')}}">Other</a>
+		<a  style="color: white;" href="{{url_for('cat6')}}">Other</a>
 		<br><br>
 	</div>
+  </ul>
+  </div>
+  </body>
+  </html>
+
+  
 </body>
 </html>
