@@ -52,7 +52,7 @@ ul {
 #Webpoll{
     float: left;
     display: block;
-    color: #C09480;
+    color:rgb(128, 0, 0);
     text-align: center;
     padding: 0px 10px;
     text-decoration: none;
@@ -63,7 +63,7 @@ ul {
 #categories-nav{
     float: center;
     display: block;
-    color: #C09480;
+    color:rgb(128, 0, 0);
     text-align: center;
     padding: 0px 10px;
     text-decoration: none;
@@ -83,15 +83,15 @@ ul {
 
 }
 .categories{
-    
+    color: rgb(128, 0, 0);
     border: solid -2px;
     display:block;
     padding: -20px -20px;
     margin: 0px;
-    text-align: right;
+    text-align: center;
     font-size: 25px;
-    background-color:  ;  
-}
+    background-color:  ;
+    
 
 .add_category{
     text-align: center;
@@ -130,7 +130,7 @@ ul {
     text-align: center ;
  }
  .postt{
-    border-style:dashed;
+    border-style: dashed;
     border-width: 5px;
     border-color: skyblue;
  }

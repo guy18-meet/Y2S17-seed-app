@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static',filename='css/style.css') }}">
 <head>
 	<title>WebComp</title>
 
@@ -10,13 +10,13 @@
 
   	<ul>
 
-      <div class="addpoll">
-        <a href="{{url_for('add_poll')}}">Add Poll</a>
-      </div>  
-      <div class= "categories-nav" id="categories-nav">
+      <div class= "categories-nav" id="categories-nav" >
         <div class="button-inverse">
     		  <a href="{{url_for('my_feed')}}">Home</a>
         </div>
+        <div class="addpoll">
+     	<a href="{{url_for('add_poll')}}">Add Poll</a>
+     	</div>  
         <div class="button-inverse">
     		  <a href="#contact">Contact</a>
         </div> 
@@ -31,19 +31,18 @@
   <br><br>
   <br>
    <div class="categories" float="right">
-		<a  style="color: skyblue;"  href="{{url_for('cat1')}}">Sports</a>
-		<br><br>
-		<a  style="color: skyblue;" href="{{url_for('cat2')}}">Lifestyle</a>
-		<br><br>
-		<a  style="color: skyblue;"  href="{{url_for('cat3')}}">Fashion</a>
-		<br><br>
-		<a " style="color: skyblue;"  href="{{url_for('cat4')}}">Cars</a>
-		<br><br>
-		<a  style="color: skyblue;"  href="{{url_for('cat5')}}">Advice</a>
-		<br><br>
-		<a  style="color: skyblue;"  href="{{url_for('cat7')}}">Food</a>
-		<br><br>
-		<a  style="color: skyblue;"  href="{{url_for('cat6')}}">Other</a>
+		<a   href="{{url_for('cat1')}}">Sports</a>
+		<a href="{{url_for('cat2')}}">Lifestyle</a>
+		
+		<a href="{{url_for('cat3')}}">Fashion</a>
+		
+		<a href="{{url_for('cat4')}}">Cars</a>
+		
+		<a href="{{url_for('cat5')}}">Advice</a>
+		
+		<a href="{{url_for('cat7')}}">Food</a>
+		
+		<a  href="{{url_for('cat6')}}">Other</a>
 		<br><br>
 	</div>
 	{% for post in posts %}
@@ -73,7 +72,7 @@
 		<br>
 		<br>
 		<br>
-		</div>
+	</div>
 	{% endfor %}
 	</form>
 
