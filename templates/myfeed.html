@@ -44,7 +44,7 @@
 		{% for opt in post.options %}
 			<form action="{{ url_for('vote', poll_id = post.id) }}" method="post" >
 			<input type="radio" , name= "vote" , value="{{opt.id}}"> {{opt.option}}, {{opt.opvote}}
-			<img src="{{opt.pic_url}}">
+			<img style="width: 50px height:50px" src="{{opt.pic_url}}">
 			<br>
 			
 		{% endfor %}
@@ -58,18 +58,18 @@
 	</form>
 
 	
-  <div class="categories">
-		<a  style="color: white;" href="{{url_for('cat1')}}">Sports</a>
+  <div class="categories" float="right">
+		<a  style="color: skyblue;"  href="{{url_for('cat1')}}">Sports</a>
 		<br><br>
-		<a  style="color: white;" href="{{url_for('cat2')}}">Lifestyle</a>
+		<a  style="color: skyblue;" href="{{url_for('cat2')}}">Lifestyle</a>
 		<br><br>
-		<a  style="color: white;" href="{{url_for('cat3')}}">Fashion</a>
+		<a  style="color: skyblue;"  href="{{url_for('cat3')}}">Fashion</a>
 		<br><br>
-		<a " style="color: white;" href="{{url_for('cat4')}}">Cars</a>
+		<a " style="color: skyblue;"  href="{{url_for('cat4')}}">Cars</a>
 		<br><br>
-		<a  style="color: white;"  href="{{url_for('cat5')}}">Advice</a>
+		<a  style="color: skyblue;"  href="{{url_for('cat5')}}">Advice</a>
 		<br><br>
-		<a  style="color: white;" href="{{url_for('cat6')}}">Other</a>
+		<a  style="color: skyblue;"  href="{{url_for('cat6')}}">Other</a>
 		<br><br>
 	</div>
   </ul>

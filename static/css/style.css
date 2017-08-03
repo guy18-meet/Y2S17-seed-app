@@ -1,6 +1,6 @@
 
 body{
-    background-image: url(http://gdj.graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-9.jpg);
+    background-image: url(http://www.designbolts.com/wp-content/uploads/2012/12/White-Gradient-Squares-Seamless-Patterns-For-Website-Backgrounds.jpg);
 }
 .divss{
     border:
@@ -77,6 +77,11 @@ ul {
 
 }
 
+#imgurl{
+    width: 50px;
+    height: 100px;
+
+}
 .categories{
     
     border: solid -2px;
