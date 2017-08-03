@@ -68,37 +68,41 @@ def add_poll():
 @app.route('/sports')
 def cat1():
     
-    catpost1=session.query(Post).filter_by(category="sports").all()
+    catpost1=session.query(Post).filter_by(category="sports").order_by('id desc').all()
     return render_template('myfeed.html', posts = catpost1)
 
 @app.route('/lifestyle')
 def cat2():
-    catpost2=session.query(Post).filter_by(category="lifestyle").all()
+    catpost2=session.query(Post).filter_by(category="lifestyle").order_by('id desc').all()
     return render_template('myfeed.html', posts = catpost2)
 
 @app.route('/fashion')
 def cat3():
-    catpost3=session.query(Post).filter_by(category="fashion").all()
+    catpost3=session.query(Post).filter_by(category="fashion").order_by('id desc').all()
     return render_template('myfeed.html', posts = catpost3)
 
 @app.route('/cars')
 def cat4():
-    catpost4=session.query(Post).filter_by(category="cars").all()
+    catpost4=session.query(Post).filter_by(category="cars").order_by('id desc').all()
     return render_template('myfeed.html', posts = catpost4)
 
 @app.route('/advices')
 def cat5():
-    catpost5=session.query(Post).filter_by(category="advice").all()
+    catpost5=session.query(Post).filter_by(category="advice").order_by('id desc').all()
     return render_template('myfeed.html', posts = catpost5)
 
 @app.route('/other')
 def cat6():
-    catpost6=session.query(Post).filter_by(category="other").all()
+    catpost6=session.query(Post).filter_by(category="other").order_by('id desc').all()
     return render_template('myfeed.html', posts = catpost6)
+
+@app.route('/food')
+def cat7():
+    catpost7=session.query(Post).filter_by(category="food").order_by('id desc').all()
+    return render_template('myfeed.html', posts = catpost7)
 
 
 @app.route('/vote/<int:poll_id>',methods=['GET', 'POST'])
-
 def vote(poll_id):
     post = session.query(Post).filter_by(id=poll_id).first()
     post.votes += 1
