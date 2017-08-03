@@ -21,25 +21,13 @@
     		  <a href="#contact">Contact</a>
         </div> 
         <div class="button-inverse"> 
-    		  <a href="#about">About</a>
+    		  <a href="{{url_for('aboutus')}}">About</a>
         </div>
       </div>
-
-      <button class="hamburger" aria-label="Navigation Menu" data-hamburger-button> 
-        <li><a href="WebComp" font="verdana">WebComp</a></li>
-    		<li><a href="{{url_for('my_feed')}}">Home</a></li>
-    		<li><a href="#contact">Contact</a></li>
-    		<li><a href="#about">About</a></li>
-        
-
-  	</ul>
-  </div>
   <br><br>
 	<a href="{{url_for('my_feed')}}">MOST RECENT</a>
 	<a href="{{url_for('my_feed')}}">MOST POPULAR</a>
   <br><br>
-  <a href="{{url_for('add_poll')}}">Add Poll</a>
-  """"". Change font of WebComp 2. Align them side-by-side 3. ask Guy for his work on the divs. 4. find out how to add a profile section at the right hand side of the taskbar"""""
   <br>
 	{% for post in posts %}
 		{{post.title}}
@@ -54,7 +42,7 @@
 		<br><br>
 		{% for opt in post.options %}
 			<form action="{{ url_for('vote', poll_id = post.id) }}" method="post" >
-			<input type="radio" , name= "vote" , value="{{opt.option}}" > {{opt.option}} {{opt.opvotes}} 
+			<input type="radio" , name= "vote" , value="{{opt.option}}" >{{opt.option}}, {{opt.opvotes}} 
 			<img src="{{opt.pic_url}}">
 			<br>
 			

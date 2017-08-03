@@ -1,3 +1,6 @@
+#allpage{
+    background-image: url("https://quotefancy.com/media/wallpaper/3840x2160/68070-Kurt-Vonnegut-Quote-What-is-flirtatiousness-but-an-argument-that.jpg");
+ }
 .topnav {
     background-color: #76323F;
     overflow: hidden;
@@ -64,10 +67,18 @@ ul {
 
 }
 .button-inverse{
-    text-align: center;
+    text-align:  center;
 
 }
+<<<<<<< Updated upstream
+.categories{
+    position: absolute;
+    display: block;
+    left: 0px
+=======
+
 .category{
+>>>>>>> Stashed changes
     text-align: left;
     border: solid 2px;
     display:block;
@@ -76,34 +87,40 @@ ul {
     background-color: /;
     text-align: center;
     font-size: 25px;
-     background-color:#2B2B2B;
+    background-color:  #C09f80;  
 }
 
 .add_category{
     text-align: center;
     font-size :30px;
-     background-color:#2B2B2B;
-
+    background-color:  #C09f80;
+     
 }
 .add_title{
     text-align: center;
-    background-color:#2B2B2B;
+    background-color:  #C09f80;
+    
 }
 .add_form{
-    text-align: center
-    background-color: #F6F6F6;
+    text-align: center;
+    background-color:  #C09f80;
+
+     
 
 }
 #textt{
     font-size: 20px;
-    background-color: #E9E581;
+    background-color: #F6F6F6;
+    text-align: center;
     
  }
  #aha{
     text-align: center;
     margin: 0px;
-    background-color: #F6F6F6;
+    background-color:  #C09f80;
  }
  .text{
-    background-color:#E9E581;
+    background-color: #C09f80;
+    text-align: center;
  }
+ 
