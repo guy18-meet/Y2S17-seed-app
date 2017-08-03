@@ -70,15 +70,11 @@ ul {
     text-align:  center;
 
 }
-<<<<<<< Updated upstream
+
 .categories{
     position: absolute;
     display: block;
     left: 0px
-=======
-
-.category{
->>>>>>> Stashed changes
     text-align: left;
     border: solid 2px;
     display:block;
