@@ -10,43 +10,53 @@
 
   	<ul>
 
-      <div class= "categories-nav" id="categories-nav" >
+      <div  id="categories-nav" >
         <div class="button-inverse">
-    		  <a href="{{url_for('my_feed')}}">Home</a>
+    		  <a style="color: rgb(0, 136, 204)" href="{{url_for('my_feed')}}">Home</a>
         </div>
         <div class="addpoll">
-     	<a href="{{url_for('add_poll')}}">Add Poll</a>
+     	<a style="color: rgb(0, 136, 204)" href="{{url_for('add_poll')}}">Add Poll</a>
      	</div>  
         <div class="button-inverse">
-    		  <a href="#contact">Contact</a>
+    		  <a style="color: rgb(0, 136, 204)" href="#contact">Contact</a>
         </div> 
         <div class="button-inverse"> 
-    		  <a href="{{url_for('aboutus')}}">About</a>
+    		  <a  style="color: rgb(0, 136, 204)" href="{{url_for('aboutus')}}">About</a>
         </div>
-        <img src="/home/student/Desktop/Y2S17-seed-app/static/meet.png" style="width:100px;height:75px" align="right">
+        <img src="https://tbncdn.freelogodesign.org/95760b38-5d73-42bd-b896-38b9047e81c8.png?1501793207514" align="right">
       </div>
   <br><br>
-	<a href="{{url_for('my_feed')}}">MOST RECENT</a>
-	<a href="{{url_for('my_feed')}}">MOST POPULAR</a>
-  <br><br>
+
   <br>
-   <div class="categories" float="right">
-		<a   href="{{url_for('cat1')}}">Sports</a>
-		<a href="{{url_for('cat2')}}">Lifestyle</a>
+   <div class="categories" style=" width:600px; margin:0 auto;">
+   		<h4>Categories:</h4>
+   		<a  style="color: rgb(134,218,239);" href="{{url_for('cat1')}}">Sports</a>
+		<a style="color:rgb(134,218,239)" href="{{url_for('cat2')}}">Lifestyle</a>
 		
-		<a href="{{url_for('cat3')}}">Fashion</a>
+		<a style="color: rgb(134,218,239)" href="{{url_for('cat3')}}">Fashion</a>
 		
-		<a href="{{url_for('cat4')}}">Cars</a>
+		<a style="color:rgb(134,218,239)" href="{{url_for('cat4')}}">Cars</a>
 		
-		<a href="{{url_for('cat5')}}">Advice</a>
+		<a style="color:rgb(134,218,239)" href="{{url_for('cat5')}}">Advice</a>
 		
-		<a href="{{url_for('cat7')}}">Food</a>
+		<a style="color: rgb(134,218,239)" href="{{url_for('cat7')}}">Food</a>
 		
-		<a  href="{{url_for('cat6')}}">Other</a>
+		<a style="color: rgb(134,218,239)" href="{{url_for('cat6')}}">Other</a>
 		<br><br>
 	</div>
+	<br>
+	<div style=" width:450px; margin:0 auto;">
+	<a style="color: rgb(53,144,166);" href="{{url_for('my_feed')}}" >MOST RECENT</a>
+	<a style="color:rgb(53,144,166);" href="{{url_for('my_feed')}}">MOST POPULAR</a>
+    <br><br><br>
+    </div>
+	<h2>Polls:</h2>
 	{% for post in posts %}
-  <div class="postt">
+  	<div class="postt" style="border-style:dashed;
+    	border-width:5px;
+   		border-color:rgb(0, 0, 102);">
+   		Title:
+   		<br>
 		{{post.title}}
 		<br><br>
 		Description: 
@@ -72,6 +82,7 @@
 		<br>
 		<br>
 	</div>
+	<br>
 	{% endfor %}
 	</form>
 

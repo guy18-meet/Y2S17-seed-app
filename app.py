@@ -117,7 +117,7 @@ def vote(poll_id):
 
 @app.route('/about')
 def aboutus():
-    return render_template('us.html')
+    return render_template('us.html',logo="file:///home/student/Desktop/Y2S17-seed-app/static/meet.png")
 
 
 @app.route('/<string:category>')

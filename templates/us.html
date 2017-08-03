@@ -1,11 +1,34 @@
 <!DOCTYPE html> 
 <html>
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 <head>
-<title>About us <b></b> </title>
+<title>About us </title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body> 
-<img src="/home/student/Desktop/Y2S17-seed-app/static/meet.png" style="width:250px;height:350px">
+
+
+	<ul class="topnav">
+
+      <div id="categories-nav" class="button-inverse" >
+    		<a style="color: rgb(0, 136, 204);"" href="{{url_for('my_feed')}}">Home</a></li>
+     		<a style="color:rgb(0, 136, 204);" href="{{url_for('add_poll')}}">Add Poll</a></li>
+    		 <a style="color:rgb(0, 136, 204)" href="#contact">Contact</a></li>
+    		<a style="color: rgb(0, 136, 204)" href="{{url_for('aboutus')}}">About</a></li>
+      </div>
+    </ul>
+<img src="https://tbncdn.freelogodesign.org/95760b38-5d73-42bd-b896-38b9047e81c8.png?1501793207514" align="right">
+<br>
+
+<h1>About us:</h1>
+<br>
+<p style="font-size: 20px">
+	We are Meet students, Isrealies and Palestinians. 
+	<br>
+	Our idea is WebPoll. 
+	<br>
+	The concept behing WebPoll was to create a site where everyone can post unnamed, and other can both just the same way.
+</p>
+<br>
 <h2>Shira Struminiski-Project manager</h2>
 <p>about her..</p> <br><br>
 

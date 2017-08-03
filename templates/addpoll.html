@@ -6,33 +6,31 @@
 	<title>Add poll</title>
 </head>
 <body>
-<div class= "add post">
+<div align= "center">
 <h1 class= "add_title">Add comparison</h1>
-</div>
 <br>
 <h2 id="aha" class= "add subtitle">In order to add a poll, fill in the following spaces:</h2>
 <br>
-<div class="allpage"></div>
 <div class= "add_form">
 <form action="{{ url_for('add_poll') }}" method="post" >
-	<div class="text">
-	<input id="textt" type="text" name="usertitle"  placeholder="Enter title">
+	<div class="textt">
+	<input type="text" name="usertitle"  placeholder="Enter title">
 	<br><br>
 
-	<textarea id="textt" name="user_description" rows="5" cols="30" placeholder="Description here"></textarea>
+	<textarea name="user_description" rows="5" cols="30" placeholder="Description here"></textarea>
 
 	<br><br>
-	<input id="textt" type="text" name="option1" placeholder="First option here">    
-	<input id="textt" type="text" name="pic_url1" placeholder="Enter picture url for option 1">
+	<input type="text" name="option1" placeholder="First option here">    
+	<input type="text" name="pic_url1" placeholder="Enter picture url for option 1">
 	<br><br>
-	<input id="textt" type="text" name="option2" placeholder="Second option here">    
-	<input id="textt" type="text" name="pic_url2" placeholder="Enter picture url for option 2">
+	<input type="text" name="option2" placeholder="Second option here">    
+	<input type="text" name="pic_url2" placeholder="Enter picture url for option 2">
 	<br><br>
-	<input id="textt" type="text" name="option3" placeholder="Third option here">    
-	<input id="textt" type="text" name="pic_url3" placeholder="Enter picture url for option 3">
+	<input type="text" name="option3" placeholder="Third option here">    
+	<input type="text" name="pic_url3" placeholder="Enter picture url for option 3">
 	<br><br>
-	<input id="textt" type="text" name="option4" placeholder="Forth option here">    
-	<input id="textt" type="text" name="pic_url4" placeholder="Enter picture url for option 4">
+	<input type="text" name="option4" placeholder="Forth option here">    
+	<input type="text" name="pic_url4" placeholder="Enter picture url for option 4">
 	</div>
 	<h3 class = "add_category">Categories:</h3>
 	<div class = "category" >
@@ -50,14 +48,12 @@
 	<input type="radio" name="category" value="other">Other
 	</div>
 	<br><br>
-	<input class="submit" type="submit">
-	<a class= cancel id= cancelbut href="{{url_for('my_feed')}}">Cancel</a>
-
-	<
+	<input type="submit">
+	<a id= cancelbut href="{{url_for('my_feed')}}">    Cancel</a>
 </form>
 </div>
 </div>
-
+</div>
 </body>
 </html>
 
