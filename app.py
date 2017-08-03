@@ -27,11 +27,6 @@ def add_poll():
     if request.method == 'GET':
     	return render_template('addpoll.html')
     else:
-        new_category   = request.form.get('category')
-        new_title       = request.form.get('usertitle')
-        new_description           = request.form.get('user_description')
-
-        new_poll=Post(category=new_category,title=new_title,description=new_description)
         opt1=request.form.get('option1')
         url1=request.form.get('pic_url1')
         opt2=request.form.get('option2')
@@ -42,12 +37,25 @@ def add_poll():
         opt3=request.form.get('option3')
         url4= request.form.get('pic_url4')
         opt4=request.form.get('option4')
+        new_options = [new_option1, new_option2]
         if url3!=None:
             new_option3=Option(option=opt3,pic_url=url3)
             session.add(new_option3)
-        elif url4!=None:
+            new_options.append(new_option3)
+        if url4!=None:
             new_option4=Option(option=opt4,pic_url=url4)
             session.add(new_option4)
+            new_options.append(new_option4)
+
+        new_category    = request.form.get('category')
+        new_title       = request.form.get('usertitle')
+        new_description = request.form.get('user_description')
+
+
+        new_poll=Post(category=new_category,title=new_title,
+            description=new_description, 
+            options = new_options)
+        
 
         session.add(new_poll,new_option2)
         session.add(new_option1)
@@ -80,7 +88,7 @@ def cat4():
 
 @app.route('/advices')
 def cat5():
-    catpost5=session.query(Post).filter_by(category="advices").all()
+    catpost5=session.query(Post).filter_by(category="advice").all()
     return render_template('myfeed.html', posts = catpost5)
 
 @app.route('/other')

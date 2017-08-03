@@ -41,7 +41,7 @@
 		{{post.category}}
 		<br><br>
 		{% for opt in post.options %}
-			<form action="{{ url_for('vote', poll_id = post.id) }}" method="post" >
+			<form action="{{ url_for('vote', poll_id = post.id) }}" method="POST" >
 			<input type="radio" , name= "vote" , value="{{opt.option}}" >{{opt.option}}, {{opt.opvotes}} 
 			<img src="{{opt.pic_url}}">
 			<br>
