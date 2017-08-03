@@ -52,7 +52,7 @@ def add_poll():
         new_description = request.form.get('user_description')
 
 
-        new_poll=Post(catpost1tegory=new_category,title=new_title,
+        new_poll=Post(category=new_category,title=new_title,
             description=new_description, 
             options = new_options)
         
