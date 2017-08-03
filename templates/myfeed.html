@@ -61,9 +61,9 @@
 		{% for opt in post.options %}
 			<form action="{{ url_for('vote', poll_id = post.id) }}" method="post" >
 			<input type="radio" , name= "vote" , value="{{opt.id}}"> {{opt.option}}, {{opt.opvote}} votes
-			<br>
+			
 			<img src="{{opt.pic_url}}" height="200", width="150">
-			<br>
+			
 			
 		{% endfor %}
 		<input id="divss" type="submit">
