@@ -29,6 +29,20 @@
 	<a href="{{url_for('my_feed')}}">MOST POPULAR</a>
   <br><br>
   <br>
+   <div class="categories" float="right">
+		<a  style="color: skyblue;"  href="{{url_for('cat1')}}">Sports</a>
+		<br><br>
+		<a  style="color: skyblue;" href="{{url_for('cat2')}}">Lifestyle</a>
+		<br><br>
+		<a  style="color: skyblue;"  href="{{url_for('cat3')}}">Fashion</a>
+		<br><br>
+		<a " style="color: skyblue;"  href="{{url_for('cat4')}}">Cars</a>
+		<br><br>
+		<a  style="color: skyblue;"  href="{{url_for('cat5')}}">Advice</a>
+		<br><br>
+		<a  style="color: skyblue;"  href="{{url_for('cat6')}}">Other</a>
+		<br><br>
+	</div>
 	{% for post in posts %}
   <div class="postt">
 		{{post.title}}
@@ -43,13 +57,9 @@
 		<br><br>
 		{% for opt in post.options %}
 			<form action="{{ url_for('vote', poll_id = post.id) }}" method="post" >
-<<<<<<< Updated upstream
-			<input type="radio" , name= "vote" , value="{{opt.id}}"> {{opt.option}}, {{opt.opvote}}
-			<img style="width: 50px height:50px" src="{{opt.pic_url}}">
-=======
 			<input type="radio" , name= "vote" , value="{{opt.id}}"> {{opt.option}}, {{opt.opvote}} votes
-			<img src="{{opt.pic_url}}">
->>>>>>> Stashed changes
+			<br>
+			<img src="{{opt.pic_url}}" height="200", width="150">
 			<br>
 			
 		{% endfor %}
@@ -58,25 +68,11 @@
 		<br>
 		<br>
 		<br>
-
+		</div>
 	{% endfor %}
 	</form>
 
 	
-  <div class="categories" float="right">
-		<a  style="color: skyblue;"  href="{{url_for('cat1')}}">Sports</a>
-		<br><br>
-		<a  style="color: skyblue;" href="{{url_for('cat2')}}">Lifestyle</a>
-		<br><br>
-		<a  style="color: skyblue;"  href="{{url_for('cat3')}}">Fashion</a>
-		<br><br>
-		<a " style="color: skyblue;"  href="{{url_for('cat4')}}">Cars</a>
-		<br><br>
-		<a  style="color: skyblue;"  href="{{url_for('cat5')}}">Advice</a>
-		<br><br>
-		<a  style="color: skyblue;"  href="{{url_for('cat6')}}">Other</a>
-		<br><br>
-	</div>
   </ul>
   </div>
   </ul>

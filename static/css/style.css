@@ -130,6 +130,7 @@ ul {
     text-align: center ;
  }
  .postt{
-    border-style:solid;
-    border-width: 1px;
+    border-style:dashed;
+    border-width: 5px;
+    border-color: skyblue;
  }
