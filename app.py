@@ -38,11 +38,11 @@ def add_poll():
         url4= request.form.get('pic_url4')
         opt4=request.form.get('option4')
         new_options = [new_option1, new_option2]
-        if url3!=None:
+        if opt3!=None:
             new_option3=Option(option=opt3,pic_url=url3)
             session.add(new_option3)
             new_options.append(new_option3)
-        if url4!=None:
+        if opt4!=None:
             new_option4=Option(option=opt4,pic_url=url4)
             session.add(new_option4)
             new_options.append(new_option4)
