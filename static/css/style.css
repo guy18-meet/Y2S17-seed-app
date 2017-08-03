@@ -124,3 +124,7 @@ ul {
  #catdiv{
     text-align: center ;
  }
+ .postt{
+    border-style:solid;
+    border-width: 1px;
+ }
