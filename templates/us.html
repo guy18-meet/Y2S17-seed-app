@@ -1,15 +1,18 @@
 <!DOCTYPE html> 
 <html>
+<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=BioRhyme' rel='stylesheet'>
 <head>
 <title>About us </title>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 <body> 
 
 
 	<ul class="topnav">
 
-      <div id="categories-nav" class="button-inverse" >
+      <div id="categories-nav" class="button-inverse" style="font-family: 'Bangers'">
     		<a style="color: rgb(0, 136, 204);"" href="{{url_for('my_feed')}}">Home</a></li>
      		<a style="color:rgb(0, 136, 204);" href="{{url_for('add_poll')}}">Add Poll</a></li>
     		 <a style="color:rgb(0, 136, 204)" href="#contact">Contact</a></li>
@@ -18,7 +21,7 @@
     </ul>
 <img src="https://tbncdn.freelogodesign.org/95760b38-5d73-42bd-b896-38b9047e81c8.png?1501793207514" align="right">
 <br>
-
+<div style="font-family: 'BioRhyme'">
 <h1>About us:</h1>
 <br>
 <p style="font-size: 20px">
@@ -26,7 +29,7 @@
 	<br>
 	Our idea is WebPoll. 
 	<br>
-	The concept behing WebPoll was to create a site where everyone can post unnamed, and other can both just the same way.
+	The concept behing WebPoll was to create a site where everyone can post questions and polls unnamed, and other can vote just the same way.
 </p>
 <br>
 <h2>Shira Struminiski-Project manager</h2>
@@ -43,3 +46,4 @@
 
 <h2>Rajai Farwagi-Co-programmer</h2> 
 <p>about him</p> <br> <br>
+</div>

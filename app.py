@@ -101,6 +101,15 @@ def cat7():
     catpost7=session.query(Post).filter_by(category="food").order_by('id desc').all()
     return render_template('myfeed.html', posts = catpost7)
 
+@app.route('/politics')
+def cat8():
+    catpost8=session.query(Post).filter_by(category="politics").order_by('id desc').all()
+    return render_template('myfeed.html', posts = catpost8)
+
+@app.route('/politics')
+def cat9():
+    catpost9=session.query(Post).filter_by(category="technology").order_by('id desc').all()
+    return render_template('myfeed.html', posts = catpost9)
 
 @app.route('/vote/<int:poll_id>',methods=['GET', 'POST'])
 def vote(poll_id):

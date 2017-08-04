@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <link rel=stylesheet type=text/css href="{{ url_for('static',filename='css/style.css') }}">
+<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=BioRhyme' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Bubblegum Sans' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Chicle' rel='stylesheet'>
 <head>
 	<title>WebComp</title>
 
@@ -10,7 +14,7 @@
 
   	<ul>
 
-      <div  id="categories-nav" >
+      <div  id="categories-nav" style="font-family: 'Bangers'" >
         <div class="button-inverse">
     		  <a style="color: rgb(0, 136, 204)" href="{{url_for('my_feed')}}">Home</a>
         </div>
@@ -28,25 +32,28 @@
   <br><br>
 
   <br>
-   <div class="categories" style=" width:600px; margin:0 auto;">
-   		<h4>Categories:</h4>
-   		<a  style="color: rgb(134,218,239);" href="{{url_for('cat1')}}">Sports</a>
-		<a style="color:rgb(134,218,239)" href="{{url_for('cat2')}}">Lifestyle</a>
+   <div class="categories" style=" width:800px; margin:0 auto; font-family: 'BioRhyme';">
+   		<h4 style="text-align: center;">Categories:</h4>
+   		<a  style="color: rgb(9, 31, 189);font-size:18px" href="{{url_for('cat1')}}">Sports</a>
+		<a style="color:rgb(9, 31, 189);font-size:18px" href="{{url_for('cat2')}}">Lifestyle</a>
 		
-		<a style="color: rgb(134,218,239)" href="{{url_for('cat3')}}">Fashion</a>
+		<a style="color: rgb(9, 31, 189);font-size:18px" href="{{url_for('cat3')}}">Fashion</a>
 		
-		<a style="color:rgb(134,218,239)" href="{{url_for('cat4')}}">Cars</a>
+		<a style="color: rgb(9, 31, 189);font-size:18px" href="{{url_for('cat4')}}">Cars</a>
 		
-		<a style="color:rgb(134,218,239)" href="{{url_for('cat5')}}">Advice</a>
+		<a style="color: rgb(9, 31, 189);font-size:18px" href="{{url_for('cat5')}}">Advice</a>
 		
-		<a style="color: rgb(134,218,239)" href="{{url_for('cat7')}}">Food</a>
+		<a style="color:  rgb(9, 31, 189);font-size:18px" href="{{url_for('cat7')}}">Food</a>
 		
-		<a style="color: rgb(134,218,239)" href="{{url_for('cat6')}}">Other</a>
-		<br><br>
+		<a style="color:  rgb(9, 31, 189);font-size:18px" href="{{url_for('cat8')}}">Politics</a>
+		<a style="color: rgb(9, 31, 189);font-size:18px" href="{{url_for('cat9')}}">Technology</a>
+		<a style="color:  rgb(9, 31, 189);font-size:18px" href="{{url_for('cat6')}}">Other</a>
+		<br>
+		<br>
 	</div>
 	<br>
-	<div style=" width:450px; margin:0 auto;">
-	<a style="color: rgb(53,144,166);" href="{{url_for('my_feed')}}" >MOST RECENT</a>
+	<div style=" width:400px; margin:0 auto; font-family: 'Bubblegum Sans'">
+	<a style="color: rgb(53,144,166);" href="{{url_for('my_feed')}}" > MOST RECENT</a>
 	<a style="color:rgb(53,144,166);" href="{{url_for('my_feed')}}">MOST POPULAR</a>
     <br><br><br>
     </div>
@@ -54,7 +61,8 @@
 	{% for post in posts %}
   	<div class="postt" style="border-style:dashed;
     	border-width:5px;
-   		border-color:rgb(0, 0, 102);">
+   		border-color:rgb(0, 0, 102);font-family: 'Chicle';">
+   		<div style="font-size: 22px" align="center">
    		Title:
    		<br>
 		{{post.title}}
@@ -67,20 +75,27 @@
 		<br>
 		{{post.category}}
 		<br><br>
+		</div>
+		<div style="font-size: 20px">
 		{% for opt in post.options %}
+			{%if opt.option!=""%}
 			<form action="{{ url_for('vote', poll_id = post.id) }}" method="post" >
-			<input type="radio" , name= "vote" , value="{{opt.id}}"> {{opt.option}}, {{opt.opvote}} votes
-			
-			<img src="{{opt.pic_url}}" height="200", width="150">
+			<input type="radio" , name= "vote" , value="{{opt.id}}"> 
+			{{opt.option}}, {{opt.opvote}} votes
+			{%endif%}
+			{%if opt.pic_url!=""%}
+				<img src="{{opt.pic_url}}" height="200", width="170">
+			{%endif%}
 	
-			
-			
+		
+		
 		{% endfor %}
-		<input id="divss" type="submit">
+		<input id="divss" type="submit" align="center">
 		<br>
 		<br>
 		<br>
 		<br>
+		</div>
 	</div>
 	<br>
 	{% endfor %}
