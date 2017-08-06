@@ -4,18 +4,23 @@ body{
 }
 
 
- }
 
 .topnav {
-    background-color: #76323F;
     overflow: hidden;
+    
+    
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
     float: left;
     display: block;
+
     text-align: center;
+
+    color: #C09f80;
+    
+
     padding: 14px 10px;
     text-decoration: none;
     font-size: 23px;
@@ -60,7 +65,7 @@ ul {
 #categories-nav{
     float: center;
     display: block;
-    text-align: center;
+    text-align: right;
     padding: 0px 10px;
     font-size: 23px;
     /*background-color: rgb(128, 0, 0);*/
