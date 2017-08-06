@@ -20,6 +20,12 @@ session = DBSession()
 def my_feed():
     posts=session.query(Post).order_by("id desc").all()
     return render_template('myfeed.html', posts = posts)
+
+@app.route('/pop')
+def my_feed_pop():
+    posts=session.query(Post).order_by("votes desc").all()
+    return render_template('myfeed.html', posts = posts)
+
     
 
 @app.route ('/add_poll',methods=['GET', 'POST'])
@@ -115,11 +121,15 @@ def cat9():
 def vote(poll_id):
     post = session.query(Post).filter_by(id=poll_id).first()
     post.votes += 1
+    tot_votes=post.votes
     
     # Capture which one is being voted on
     voted_on = request.form.get('vote')
     voted_on_option = session.query(Option).filter_by(id=voted_on).first()
     voted_on_option.opvote += 1
+
+
+
 
     session.commit()
     return redirect(url_for('my_feed'))
