@@ -6,7 +6,7 @@
 <link href='https://fonts.googleapis.com/css?family=Bubblegum Sans' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Chicle' rel='stylesheet'>
 <head>
-	<title>WebComp</title>
+	<title>WebPoll</title>
 
 </head>
 <body>
@@ -14,21 +14,22 @@
 
   	<ul>
 
-      <div  id="categories-nav" style="font-family: 'Bangers'" >
+      <div  id="categories-nav" style="font-family: 'Bangers'; position: fixed; width: 1300px ;"  >
         <div class="button-inverse">
-    		  <a style="color: rgb(0, 136, 204)" href="{{url_for('my_feed')}}">Home</a>
+    		  <a style="color: white;" href="{{url_for('my_feed')}}">Home</a>
         </div>
-        <div class="addpoll">
-     	<a style="color: rgb(0, 136, 204)" href="{{url_for('add_poll')}}">Add Poll</a>
+        <div class="addpoll" >
+     	<a style="color: white ;" href="{{url_for('add_poll')}}">Add Poll</a>
      	</div>  
         <div class="button-inverse">
-    		  <a style="color: rgb(0, 136, 204)" href="#contact">Contact</a>
+    		  <a style="color: white;" href="#contact">Contact</a>
         </div> 
         <div class="button-inverse"> 
-    		  <a  style="color: rgb(0, 136, 204)" href="{{url_for('aboutus')}}">About</a>
+    		  <a  style="color: white;" href="{{url_for('aboutus')}}">About</a>
         </div>
-        <img src="https://tbncdn.freelogodesign.org/95760b38-5d73-42bd-b896-38b9047e81c8.png?1501793207514" align="right">
       </div>
+      <br><br>
+       <img src="https://tbncdn.freelogodesign.org/95760b38-5d73-42bd-b896-38b9047e81c8.png?1501793207514" align="right">
   <br><br>
 
   <br>
@@ -54,15 +55,13 @@
 	<br>
 	<div style=" width:400px; margin:0 auto; font-family: 'Bubblegum Sans'">
 	<a style="color: rgb(53,144,166);" href="{{url_for('my_feed')}}" > MOST RECENT</a>
-	<a style="color:rgb(53,144,166);" href="{{url_for('my_feed')}}">MOST POPULAR</a>
+	<a style="color:rgb(53,144,166);" href="{{url_for('my_feed_pop')}}">MOST POPULAR</a>
     <br><br><br>
     </div>
 	<h2>Polls:</h2>
 	{% for post in posts %}
-  	<div class="postt" style="border-style:dashed;
-    	border-width:5px;
-   		border-color:rgb(0, 0, 102);font-family: 'Chicle';">
-   		<div style="font-size: 22px" align="center">
+  	<div class="postt" style="font-family: 'Chicle';">
+   		<div style="font-size: 22px" align="center" style="background-image:url(http://www.bestuidesign.com/images/preview/Professional-Background-Designs-Site-designing-106356.jpg)">
    		Title:
    		<br>
 		{{post.title}}

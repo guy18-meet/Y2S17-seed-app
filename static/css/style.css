@@ -63,6 +63,7 @@ ul {
     text-align: center;
     padding: 0px 10px;
     font-size: 23px;
+    background-image:url(http://www.grousetyee.com/images/header3_background.jpg)
     /*background-color: rgb(128, 0, 0);*/
 
 }
@@ -120,12 +121,16 @@ ul {
  #catdiv{
     text-align: center ;
  }
- .postt{
-    border-style:dashed;
-    border-width:5px;
-    border-color:black;
- }
-
+ 
  .textt *input{
     text-align: center;
+ }
+
+ table{
+    border:10px;
+    padding: 25px;
+    background-image: url(http://cdn.wallpapersafari.com/61/67/pPDSgQ.jpg)
+ }
+ .postt{
+    background-image:url( http://www.bestuidesign.com/images/preview/Professional-Background-Designs-Site-designing-106356.jpg)
  }

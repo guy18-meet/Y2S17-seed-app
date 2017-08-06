@@ -20,6 +20,12 @@ session = DBSession()
 def my_feed():
     posts=session.query(Post).order_by("id desc").all()
     return render_template('myfeed.html', posts = posts)
+
+@app.route('/pop')
+def my_feed_pop():
+    posts=session.query(Post).order_by("votes desc").all()
+    return render_template('myfeed.html', posts = posts)
+
     
 
 @app.route ('/add_poll',methods=['GET', 'POST'])
